@@ -114,13 +114,16 @@ export const Navbar = () => {
                 LOGO SECTION (UPDATED)
                 Place your logo.png in the public folder
                ========================================= */}
-            <Link to="/" className="flex items-center group py-1">
-              <img
-                src="/logo.png" 
-                alt="MAAK DESIGNS Logo"
-                className="h-20 md:h-24 w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-md"
-              />
-            </Link>
+          
+<Link to="/" className="flex items-center group py-1">
+  <img
+    src={`${import.meta.env.BASE_URL}logo.png`}
+    alt="MAAK DESIGNS Logo"
+    className="h-20 md:h-24 w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-md"
+    onError={(e) => console.error('Logo failed to load:', e.currentTarget.src)}
+  />
+</Link>
+
             {/* ========================================= */}
 
             {/* Desktop Navigation Links */}
@@ -228,11 +231,16 @@ export const Navbar = () => {
                     MOBILE LOGO SECTION (UPDATED)
                    ========================================= */}
                 <Link to="/" onClick={() => setMobileMenuOpen(false)}>
-                  <img
-                    src="/logo.png"
-                    alt="MAAK DESIGNS Logo"
-                    className="h-16 w-auto object-contain"
-                  />
+               
+
+  <img
+    src={`${import.meta.env.BASE_URL}logo.png`}
+    alt="MAAK DESIGNS Logo"
+    className="h-20 md:h-24 w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-md"
+    onError={(e) => console.error('Logo failed to load:', e.currentTarget.src)}
+  />
+
+
                 </Link>
                 {/* ========================================= */}
                 
