@@ -1,5 +1,12 @@
+
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation
+} from 'react-router-dom';
+
 import { ShopProvider } from './context/ShopContext';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
@@ -21,7 +28,6 @@ import { JewelleryCarePage } from './pages/JewelleryCarePage';
 import { ContactPage } from './pages/ContactPage';
 import { AdminDashboardPage } from './pages/AdminDashboardPage';
 
-// Scroll to top on route change helper
 const ScrollToTop = () => {
   const { pathname } = useLocation();
 
@@ -35,11 +41,13 @@ const ScrollToTop = () => {
 export default function App() {
   return (
     <ShopProvider>
-      <Router>
+      <Router basename="/maak-designs">
         <ScrollToTop />
+
         <div className="min-h-screen flex flex-col justify-between bg-[#FAF6F0] text-[#2C2623] selection:bg-amber-200 selection:text-amber-900">
           <div>
             <Navbar />
+
             <main className="min-h-[calc(100vh-300px)]">
               <Routes>
                 <Route path="/" element={<HomePage />} />
@@ -61,6 +69,7 @@ export default function App() {
               </Routes>
             </main>
           </div>
+
           <Footer />
           <FloatingWhatsApp />
         </div>
